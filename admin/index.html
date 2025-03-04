@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Card Generator</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: none;
+        }
+
+        button {
+            background: #ff9800;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e68900;
+        }
+
+        textarea {
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Image Card Generator</h2>
+        
+        <label for="image-url">Image Link:</label>
+        <input type="text" id="image-url" placeholder="Enter image URL">
+
+        <label for="ig-link">Instagram Link:</label>
+        <input type="text" id="ig-link" placeholder="Enter Instagram post link">
+
+        <label for="image-text">Text:</label>
+        <input type="text" id="image-text" placeholder="Enter description">
+
+        <button onclick="generateHTML()">Generate</button>
+        <button onclick="copyHTML()">Copy</button>
+
+        <h3>Generated HTML:</h3>
+        <textarea id="output-html" readonly></textarea>
+    </div>
+
+    <script>
+        function generateHTML() {
+            const imageUrl = document.getElementById("image-url").value;
+            const igLink = document.getElementById("ig-link").value;
+            const imageText = document.getElementById("image-text").value;
+
+            if (!imageUrl || !igLink || !imageText) {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            const htmlTemplate = `
+<div class="image-card" data-text="${imageText}" data-ig-link="${igLink}">
+    <img class="gallery-img" src="${imageUrl}" alt="Image">
+    <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+</div>`;
+
+            document.getElementById("output-html").value = htmlTemplate;
+        }
+
+        function copyHTML() {
+            const outputHtml = document.getElementById("output-html");
+            outputHtml.select();
+            document.execCommand("copy");
+            alert("HTML copied successfully!");
+        }
+    </script>
+
+</body>
+</html>
