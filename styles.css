@@ -46,6 +46,7 @@ body {
     border-radius: 10px;
     overflow: hidden;
     cursor: pointer;
+    text-align: justify;
 }
 
 .gallery-img {
