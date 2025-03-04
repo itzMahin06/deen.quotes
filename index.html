@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEEN QUOTES</title>
+  <meta name="description" content="Inspirational Islamic quotes and wisdom to uplift your soul.">
+<meta name="keywords" content="Islamic Quotes, Deen, Quran, Hadith, Inspiration, Wisdom">
+<meta name="author" content="DEEN QUOTES">
+
+<!-- Open Graph Meta Tags (For Social Media Sharing) -->
+<meta property="og:title" content="DEEN QUOTES">
+<meta property="og:description" content="Inspirational Islamic quotes and wisdom to uplift your soul.">
+<meta property="og:image" content="admin/og.jpg">
+<meta property="og:url" content="https://deen-quotes.maahin.my.id">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DEEN QUOTES">
+<meta name="twitter:description" content="Inspirational Islamic quotes and wisdom to uplift your soul.">
+<meta name="twitter:image" content="admin/og.jpg">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="https://deen-quotes.maahin.my.id">
+    <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KIT.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="profile-box">
+        <img src="admin/profile.jpg" alt="Profile Picture" class="profile-pic">
+        <div class="profile-info">
+            <h2>DEEN QUOTES</h2>
+            <p>@deen.quotes.ig</p>
+            <p>Daily reminders to strengthen your faith. </p>
+        </div>
+        <div class="social-links">
+            <a href="https://instagram.com/deen.quotes.ig" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://threads.net/@deen.quotes.ig" target="_blank"><i class="fab fa-threads"></i></a>
+            <a href="https://pinterest.com/deenquotespin" target="_blank"><i class="fab fa-pinterest"></i></a>
+        </div>
+    </div>
+
+    <div class="image-gallery">
+        <div class="image-card" data-text="This is Image 1">
+            <img class="gallery-img" src="https://via.placeholder.com/300x375" alt="Image 1">
+            <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+        </div>
+        <div class="image-card" data-text="This is Image 2">
+            <img class="gallery-img" src="https://via.placeholder.com/300x375" alt="Image 2">
+            <button class="share-btn"><i class="fas fa-share-alt"></i> Share</button>
+        </div>
+    </div>
+
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <img id="popup-img" src="" alt="Popup Image">
+            <p id="popup-text"></p>
+        </div>
+    </div>
+
+    <!-- Share Options -->
+    <div id="share-options" class="share-options">
+        <button onclick="share('facebook')"><i class="fab fa-facebook"></i> Facebook</button>
+        <button onclick="share('messenger')"><i class="fab fa-facebook-messenger"></i> Messenger</button>
+        <button onclick="share('whatsapp')"><i class="fab fa-whatsapp"></i> WhatsApp</button>
+        <button onclick="copyLink()"><i class="fas fa-link"></i> Copy Link</button>
+    </div>
+
+    <!-- Alert Box -->
+    <div id="alert-box" class="alert-box">Shared Success!</div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
