@@ -76,3 +76,33 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 2000);
     }
 });
+
+// Auto Play Music
+    let music = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    function playMusic() {
+        music.play().then(() => isPlaying = true).catch(error => console.log("Auto-play blocked"));
+    }
+
+    window.onload = function() {
+        setTimeout(() => {
+            document.getElementById("musicAlert").style.display = "none";
+        }, 5000);
+        playMusic();
+    };
+
+    // Double Tap to Toggle Music
+    let lastTap = 0;
+    document.addEventListener("touchend", function(e) {
+        let currentTime = new Date().getTime();
+        if (currentTime - lastTap < 300) {
+            if (isPlaying) {
+                music.pause();
+            } else {
+                music.play();
+            }
+            isPlaying = !isPlaying;
+        }
+        lastTap = currentTime;
+    });
