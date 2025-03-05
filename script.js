@@ -77,24 +77,30 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
-// Auto Play Music
-    let music = document.getElementById("bgMusic");
+let music = document.getElementById("bgMusic");
     let isPlaying = false;
 
+    // Function to play music with user interaction bypass
     function playMusic() {
-        music.play().then(() => isPlaying = true).catch(error => console.log("Auto-play blocked"));
+        music.play().then(() => {
+            isPlaying = true;
+        }).catch(error => {
+            console.log("Autoplay blocked, waiting for user interaction...");
+            document.body.addEventListener("click", playMusic, { once: true });
+        });
     }
 
-    window.onload = function() {
+    // Automatically play music after page loads
+    window.addEventListener("load", function () {
+        playMusic();
         setTimeout(() => {
             document.getElementById("musicAlert").style.display = "none";
         }, 5000);
-        playMusic();
-    };
+    });
 
     // Double Tap to Toggle Music
     let lastTap = 0;
-    document.addEventListener("touchend", function(e) {
+    document.addEventListener("touchend", function (e) {
         let currentTime = new Date().getTime();
         if (currentTime - lastTap < 300) {
             if (isPlaying) {
